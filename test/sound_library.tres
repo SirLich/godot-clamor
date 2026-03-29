@@ -12,11 +12,16 @@ metadata/_custom_type_script = "uid://culasgrmtad12"
 script = ExtResource("3_doxvt")
 metadata/_custom_type_script = "uid://b34yro7yi5h7i"
 
+[sub_resource type="Resource" id="Resource_x416g"]
+script = ExtResource("2_doxvt")
+metadata/_custom_type_script = "uid://culasgrmtad12"
+
 [resource]
 script = ExtResource("1_f240l")
 name = "Bob"
 sounds = Dictionary[String, ExtResource("2_doxvt")]({
 "Bobby": SubResource("Resource_ma0kx"),
-"Sally": SubResource("Resource_g6m58")
+"Sally": SubResource("Resource_g6m58"),
+"Soda": SubResource("Resource_x416g")
 })
 metadata/_custom_type_script = "uid://b0ys5pjmtjvhe"

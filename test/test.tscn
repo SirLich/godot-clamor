@@ -5,11 +5,13 @@
 
 [sub_resource type="Resource" id="Resource_8a8pi"]
 script = ExtResource("2_8a8pi")
-metadata/_custom_type_script = "uid://byn6p5ek60fvi"
+library_id = "Bob"
+sound_id = "Soda"
 
 [sub_resource type="Resource" id="Resource_65205"]
 script = ExtResource("2_8a8pi")
-library_id = "Bobby"
+library_id = "Roombaba"
+sound_id = "Chak"
 
 [node name="Test" type="Control" unique_id=292418398]
 layout_mode = 3

@@ -14,7 +14,6 @@ func get_sound_identifiers() -> Array[String]:
 		for sound_name in library.sounds.keys():
 			out.append(library.name + ": " + sound_name)
 	out.sort()
-	print(out)
 	return out
 	
 func get_library_by_name(name : String) -> SoundLibrary:
