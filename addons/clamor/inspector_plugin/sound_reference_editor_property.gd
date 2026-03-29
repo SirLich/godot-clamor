@@ -36,11 +36,26 @@ func select_item_from_text(option_button: OptionButton, item_text: String) -> vo
 			option_button.select(i)
 			break
 
+func get_sound_reference() -> SoundReference:
+	var reference : SoundReference =  get_edited_object().get(get_edited_property())
+	return reference
+	
 func get_library_id():
-	return get_edited_object().get(get_edited_property()).get("library_id")
+	return get_sound_reference().library_id
 
 func get_sound_id():
-	return get_edited_object().get(get_edited_property()).get("sound_id")
+	return get_sound_reference().sound_id
+
+func play_editor_sound(stream_data : SoundReference.StreamData):
+	if not stream_data.stream:
+		push_warning("Stream is null!")
+		return 
+		
+	var player = AudioStreamPlayer.new()
+	player.stream = stream_data.stream
+	EditorInterface.get_base_control().add_child(player)
+	player.play()
+	player.finished.connect(func(): player.queue_free())
 	
 func create_control():
 	var theme = EditorInterface.get_base_control().theme
@@ -52,6 +67,7 @@ func create_control():
 	
 	var play_button = Button.new()
 	play_button.icon = EditorInterface.get_base_control().get_theme_icon("Play", "EditorIcons")
+	play_button.pressed.connect(func(): play_editor_sound(get_sound_reference().get_stream_data()))
 	hbox_container.add_child(play_button)
 	
 	var library_option := OptionButton.new()

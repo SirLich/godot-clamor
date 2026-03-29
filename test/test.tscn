@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_8a8pi"]
 script = ExtResource("2_8a8pi")
 library_id = "Bob"
-sound_id = "Soda"
+sound_id = "Bobby"
 
 [sub_resource type="Resource" id="Resource_65205"]
 script = ExtResource("2_8a8pi")

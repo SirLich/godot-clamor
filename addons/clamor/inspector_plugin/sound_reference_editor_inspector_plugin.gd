@@ -23,6 +23,6 @@ func _parse_property(object: Object, type: Variant.Type, name: String, hint_type
 		control.sound_selected.connect(func(sound_id: String): object[name].set("sound_id", sound_id))
 		#control.setup(object.get(name))
 		add_property_editor(name, control)
-		return false
+		return true
 
 	return false

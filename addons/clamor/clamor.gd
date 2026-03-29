@@ -33,7 +33,6 @@ func initialize_settings():
 	})
 	
 
-	
 static func get_settings() -> ClamorSettings:
 	var settings_path = ProjectSettings.get_setting(_settings_path) as String
 	if settings_path.is_empty():
