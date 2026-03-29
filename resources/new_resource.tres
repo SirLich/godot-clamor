@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Sound" format=3 uid="uid://cnlptua77lx3t"]
+
+[ext_resource type="Script" uid="uid://culasgrmtad12" path="res://addons/clamor/sound.gd" id="1_g5ko2"]
+
+[resource]
+script = ExtResource("1_g5ko2")
+metadata/_custom_type_script = "uid://culasgrmtad12"

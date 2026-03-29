@@ -8,15 +8,29 @@
 
 config_version=5
 
+[addons]
+
+clamor/settings-path="uid://sqsk5jmwdhq4"
+
 [application]
 
 config/name="Clamor"
+config/tags=PackedStringArray("addon")
+run/main_scene="uid://be2keryo2ejqd"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[autoload]
+
+SoundManager="*uid://dw5tqnsdj1l3w"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/clamor/plugin.cfg")
+
+[global_group]
+
+test=""
+test2=""
 
 [physics]
 

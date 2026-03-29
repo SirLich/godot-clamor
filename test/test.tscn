@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://be2keryo2ejqd"]
+
+[ext_resource type="Script" uid="uid://b8guutcb74y47" path="res://test/test.gd" id="1_syuel"]
+[ext_resource type="Script" uid="uid://byn6p5ek60fvi" path="res://addons/clamor/sound_reference.gd" id="2_8a8pi"]
+
+[sub_resource type="Resource" id="Resource_8a8pi"]
+script = ExtResource("2_8a8pi")
+metadata/_custom_type_script = "uid://byn6p5ek60fvi"
+
+[sub_resource type="Resource" id="Resource_65205"]
+script = ExtResource("2_8a8pi")
+library_id = "Bobby"
+
+[node name="Test" type="Control" unique_id=292418398]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syuel")
+click_sound = SubResource("Resource_8a8pi")
+second_sound = SubResource("Resource_65205")
+
+[node name="Button" type="Button" parent="." unique_id=1003153682]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 99.0
+offset_right = 563.0
+offset_bottom = 288.0
+text = "BUtton"

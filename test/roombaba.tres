@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SoundLibrary" format=3 uid="uid://bak11vl3t4jw6"]
+
+[ext_resource type="Script" uid="uid://b0ys5pjmtjvhe" path="res://addons/clamor/sound_library.gd" id="1_fub6f"]
+[ext_resource type="Script" uid="uid://culasgrmtad12" path="res://addons/clamor/sound.gd" id="2_i70g4"]
+
+[sub_resource type="Resource" id="Resource_fub6f"]
+script = ExtResource("2_i70g4")
+metadata/_custom_type_script = "uid://culasgrmtad12"
+
+[resource]
+script = ExtResource("1_fub6f")
+name = "Roombaba"
+sounds = Dictionary[String, ExtResource("2_i70g4")]({
+"Chak": SubResource("Resource_fub6f")
+})
+metadata/_custom_type_script = "uid://b0ys5pjmtjvhe"

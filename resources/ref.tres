@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundReference" format=3 uid="uid://fyce8uexo7ui"]
+
+[ext_resource type="Script" uid="uid://byn6p5ek60fvi" path="res://addons/clamor/sound_reference.gd" id="1_v0ltw"]
+
+[resource]
+script = ExtResource("1_v0ltw")
+library_id = "Bob"
+sound_id = "Bobby"
+metadata/_custom_type_script = "uid://byn6p5ek60fvi"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClamorSettings" format=3 uid="uid://sqsk5jmwdhq4"]
+
+[ext_resource type="Script" uid="uid://bxckkflyhmqxb" path="res://addons/clamor/clamor_settings.gd" id="1_gmn0t"]
+[ext_resource type="Script" uid="uid://b0ys5pjmtjvhe" path="res://addons/clamor/sound_library.gd" id="2_opmm5"]
+[ext_resource type="Resource" uid="uid://htsaitjk4i8q" path="res://test/sound_library.tres" id="3_opmm5"]
+[ext_resource type="Resource" uid="uid://bak11vl3t4jw6" path="res://test/roombaba.tres" id="4_fa1ym"]
+
+[resource]
+script = ExtResource("1_gmn0t")
+sound_libraries = Array[ExtResource("2_opmm5")]([ExtResource("3_opmm5"), ExtResource("4_fa1ym")])
+metadata/_custom_type_script = "uid://bxckkflyhmqxb"
