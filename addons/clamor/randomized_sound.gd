@@ -3,7 +3,6 @@
 class_name RandomizedSound extends Sound
 
 @export var streams : Array[AudioStream]
-@export_file var filepath = ""
 
 func _validate_property(property: Dictionary) -> void:
 	if property.name == "stream":
