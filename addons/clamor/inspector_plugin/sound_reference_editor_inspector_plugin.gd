@@ -16,13 +16,17 @@ func _get_script_class_name(object: Object) -> String:
 func _can_handle(object: Object) -> bool:
 	return true
 
+func set_library(library_name: String, library_id: String, object: Object, name: String):
+	object[name].set("library_name", library_name)
+	object[name].set("library_id", library_id)
+
 func _parse_property(object: Object, type: Variant.Type, name: String, hint_type: PropertyHint, hint_string: String, usage_flags: int, wide: bool) -> bool:		
 	if hint_string == "SoundReference":
 		var control = load("uid://c1cgosdafqfmy").new()
-		control.library_selected.connect(func(library_id: String): object[name].set("library_id", library_id))
-		control.sound_selected.connect(func(sound_id: String): object[name].set("sound_id", sound_id))
+		control.library_selected.connect(set_library.bind(object, name))
+		control.sound_selected.connect(func(sound_name: String, sound_id: String): object[name].set("sound_id", sound_id))
 		#control.setup(object.get(name))
 		add_property_editor(name, control)
-		return true
+		return false
 
 	return false

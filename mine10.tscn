@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://bpkkqucj6x6bx"]
+
+[ext_resource type="Theme" uid="uid://xmsbibftb2u" path="res://new_theme.tres" id="1_to45e"]
+[ext_resource type="Script" uid="uid://c1cgosdafqfmy" path="res://addons/clamor/inspector_plugin/sound_reference_editor_property.gd" id="1_ykqb1"]
+
+[sub_resource type="DPITexture" id="DPITexture_a1xv8"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M4 12a1 1 0 0 0 1.555.832l6-4a1 1 0 0 0 0-1.664l-6-4A1 1 0 0 0 4 4z\"/></svg>
+"
+base_scale = 1.25
+saturation = 2.0
+color_map = {
+Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
+Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
+Color(1, 0.8666667, 0.39607844, 1): Color(0.83, 0.78, 0.62, 1)
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o44bk"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.06923, 0.06923, 0.06923, 1)
+corner_detail = 4
+
+[sub_resource type="DPITexture" id="DPITexture_kpx5t"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"24\" height=\"32\" viewBox=\"0 0 6.35 8.467\"><defs><linearGradient id=\"a\"><stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\".3\"/><stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/></linearGradient><linearGradient xlink:href=\"#a\" id=\"b\" x1=\"4.233\" x2=\"4.233\" y1=\"0\" y2=\"6.35\" gradientTransform=\"translate(-8.467)\" gradientUnits=\"userSpaceOnUse\"/></defs><path fill=\"url(#b)\" d=\"M-8.467 0H0V6.35H-8.467z\" paint-order=\"fill markers stroke\" transform=\"rotate(-90)\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gnn2"]
+content_margin_left = 7.5
+content_margin_top = 7.5
+content_margin_right = 7.5
+content_margin_bottom = 7.5
+bg_color = Color(0.161, 0.161, 0.161, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.337, 0.62, 1, 0.8)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[node name="_EditorProperty_83257" type="EditorProperty" unique_id=1832476453]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -917.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "property|\"test/test.gd\"|click_sound"
+theme = ExtResource("1_to45e")
+label = "Click Sound"
+use_folding = true
+script = ExtResource("1_ykqb1")
+
+[node name="@HBoxContainer@83255" type="HBoxContainer" parent="." unique_id=72318998]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="@HBoxContainer@83256" type="HBoxContainer" parent="." unique_id=680882762]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="@Control@83278" type="Control" parent="." unique_id=2042533615]
+layout_mode = 2
+
+[node name="@HBoxContainer@83258" type="HBoxContainer" parent="@Control@83278" unique_id=251570720]
+layout_mode = 0
+theme_override_constants/separation = 20
+
+[node name="@Button@83259" type="Button" parent="@Control@83278/@HBoxContainer@83258" unique_id=82648248]
+layout_mode = 2
+theme_type_variation = &"EditorInspectorButton"
+icon = SubResource("DPITexture_a1xv8")
+flat = true
+
+[node name="@OptionButton@83268" type="OptionButton" parent="@Control@83278/@HBoxContainer@83258" unique_id=1247991347]
+layout_mode = 2
+theme_type_variation = &"EditorInspectorButton"
+flat = true
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "UI"
+popup/item_1/id = 1
+popup/item_2/text = "Roombaba"
+popup/item_2/id = 2
+
+[node name="@PopupMenu@83267" type="PopupMenu" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268" unique_id=682007148]
+position = Vector2i(4821, 339)
+size = Vector2i(179, 108)
+unfocusable = true
+popup_wm_hint = false
+min_size = Vector2i(179, 108)
+shrink_width = false
+item_count = 3
+item_0/text = "None"
+item_0/checkable = 2
+item_0/id = 0
+item_1/text = "UI"
+item_1/checkable = 2
+item_1/checked = true
+item_1/id = 1
+item_2/text = "Roombaba"
+item_2/checkable = 2
+item_2/id = 2
+
+[node name="@PanelContainer@83260" type="PanelContainer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267" unique_id=553524574]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o44bk")
+
+[node name="@ScrollContainer@83263" type="ScrollContainer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260" unique_id=164510570]
+layout_mode = 2
+
+[node name="@Control@83264" type="Control" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260/@ScrollContainer@83263" unique_id=1854160037]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="@TextureRect@83261" type="TextureRect" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260/@ScrollContainer@83263" unique_id=725190219]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("DPITexture_kpx5t")
+expand_mode = 1
+
+[node name="@TextureRect@83262" type="TextureRect" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260/@ScrollContainer@83263" unique_id=676062447]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("DPITexture_kpx5t")
+expand_mode = 1
+flip_h = true
+
+[node name="_h_scroll2" type="HScrollBar" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260/@ScrollContainer@83263" unique_id=95779765]
+visible = false
+layout_mode = 2
+max_value = 0.0
+
+[node name="_v_scroll2" type="VScrollBar" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260/@ScrollContainer@83263" unique_id=461264640]
+visible = false
+layout_mode = 2
+max_value = 84.0
+page = 84.0
+
+[node name="_focus2" type="PanelContainer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267/@PanelContainer@83260/@ScrollContainer@83263" unique_id=1802776063]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gnn2")
+
+[node name="@Timer@83265" type="Timer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267" unique_id=931958014]
+wait_time = 0.2
+one_shot = true
+
+[node name="@Timer@83266" type="Timer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83268/@PopupMenu@83267" unique_id=570484812]
+wait_time = 0.5
+one_shot = true
+
+[node name="@OptionButton@83277" type="OptionButton" parent="@Control@83278/@HBoxContainer@83258" unique_id=82140967]
+layout_mode = 2
+theme_type_variation = &"EditorInspectorButton"
+flat = true
+selected = 0
+fit_to_longest_item = false
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="@PopupMenu@83276" type="PopupMenu" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277" unique_id=247959998]
+position = Vector2i(4902, 339)
+size = Vector2i(135, 52)
+unfocusable = true
+popup_wm_hint = false
+min_size = Vector2i(135, 52)
+shrink_width = false
+item_count = 1
+item_0/text = "None"
+item_0/checkable = 2
+item_0/checked = true
+item_0/id = 0
+
+[node name="@PanelContainer@83269" type="PanelContainer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276" unique_id=1698103878]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o44bk")
+
+[node name="@ScrollContainer@83272" type="ScrollContainer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269" unique_id=1308898588]
+layout_mode = 2
+
+[node name="@Control@83273" type="Control" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269/@ScrollContainer@83272" unique_id=803540819]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="@TextureRect@83270" type="TextureRect" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269/@ScrollContainer@83272" unique_id=1292184191]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("DPITexture_kpx5t")
+expand_mode = 1
+
+[node name="@TextureRect@83271" type="TextureRect" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269/@ScrollContainer@83272" unique_id=1582371922]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("DPITexture_kpx5t")
+expand_mode = 1
+flip_h = true
+
+[node name="_h_scroll2" type="HScrollBar" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269/@ScrollContainer@83272" unique_id=687640315]
+visible = false
+layout_mode = 2
+max_value = 0.0
+
+[node name="_v_scroll2" type="VScrollBar" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269/@ScrollContainer@83272" unique_id=2107344547]
+visible = false
+layout_mode = 2
+max_value = 28.0
+page = 28.0
+
+[node name="_focus2" type="PanelContainer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276/@PanelContainer@83269/@ScrollContainer@83272" unique_id=1436338898]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gnn2")
+
+[node name="@Timer@83274" type="Timer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276" unique_id=1770745435]
+wait_time = 0.2
+one_shot = true
+
+[node name="@Timer@83275" type="Timer" parent="@Control@83278/@HBoxContainer@83258/@OptionButton@83277/@PopupMenu@83276" unique_id=1847402192]
+wait_time = 0.5
+one_shot = true

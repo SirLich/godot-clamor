@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cs2ndolda7bul"]
+
+[node name="ControlTesting" type="Control" unique_id=1808644126]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2141101512]
+layout_mode = 0
+offset_right = 454.0
+offset_bottom = 31.0
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=1760467521]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=1303310370]
+custom_minimum_size = Vector2(0, 109.41)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0, 1, 1)

@@ -1,6 +1,6 @@
 extends EditorProperty
 
-signal library_selected(text: String)
+signal library_selected(name: String, id: String)
 signal sound_selected(text: String)
 
 var control : Control
@@ -9,19 +9,23 @@ func get_library_names():
 	return ClamorSettings.get_settings().sound_libraries.map(func(library : SoundLibrary): return library.name) 
 	
 func get_sound_names():
-	var current_library = ClamorSettings.get_settings().get_library_by_name(get_library_id())
+	var current_library = ClamorSettings.get_settings().get_library_by_id(get_library_id())
 	var sound_options = []
 
 	if current_library:
-		sound_options = current_library.sounds.keys()
-	print("Sound options: ")
-	print(sound_options)
+		sound_options = current_library.sound_dictionary.keys()
 	return sound_options
+
+## Maps: Name -> ID
+var library_names : Array[String]
+var library_ids : Array[String]
 
 func configure_library_options(button: OptionButton):
 	button.add_item("None")
-	for library_name in get_library_names():
-		button.add_item(library_name)
+	for library in ClamorSettings.get_settings().sound_libraries:
+		library_names.append(library.name)
+		library_ids.append(library.id)
+		button.add_item(library.name)
 
 func configure_sound_options(button: OptionButton):
 	button.clear()
@@ -56,27 +60,48 @@ func play_editor_sound(stream_data : SoundReference.StreamData):
 	EditorInterface.get_base_control().add_child(player)
 	player.play()
 	player.finished.connect(func(): player.queue_free())
+
+func emit_library_selected(index: int) -> void:
+	if index == 0:
+		library_selected.emit("", "")
+		return
+	var lookup_index = index - 1
+	library_selected.emit(library_names[lookup_index], library_ids[lookup_index])
 	
 func create_control():
-	var theme = EditorInterface.get_base_control().theme
-	var control := Control.new()
-	control.theme = theme
+	library_ids.clear()
+	library_names.clear()
 	
 	var hbox_container := HBoxContainer.new()
-	control.add_child(hbox_container)
+	hbox_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	#hbox_container.clip_children = CanvasItem.CLIP_CHILDREN_AND_DRAW
+	#hbox_container.clip_contents = true
+	#hbox_container.add_theme_constant_override("separation", 20)
 	
 	var play_button = Button.new()
 	play_button.icon = EditorInterface.get_base_control().get_theme_icon("Play", "EditorIcons")
 	play_button.pressed.connect(func(): play_editor_sound(get_sound_reference().get_stream_data()))
+	play_button.theme_type_variation = "EditorInspectorButton"
 	hbox_container.add_child(play_button)
 	
 	var library_option := OptionButton.new()
+	library_option.clip_text = true
+	library_option.fit_to_longest_item = true
+	library_option.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	library_option.theme_type_variation = "EditorInspectorButton"
 	configure_library_options(library_option)
 	hbox_container.add_child(library_option)
-	library_option.item_selected.connect(func(index: int): library_selected.emit(library_option.get_item_text(index)))
-	select_item_from_text(library_option, get_library_id())
+	library_option.item_selected.connect(emit_library_selected)
+	var selected_index = library_ids.find(get_library_id()) + 1
+	print(get_library_id())
+	library_option.select(selected_index)
 
 	var sound_option := OptionButton.new()
+	sound_option.clip_text = true
+	sound_option.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sound_option.fit_to_longest_item = true
+	sound_option.theme_type_variation = "EditorInspectorButton"
+
 	configure_sound_options(sound_option)
 	sound_option.item_selected.connect(func(index: int): sound_selected.emit(sound_option.get_item_text(index)))
 	hbox_container.add_child(sound_option)
@@ -85,7 +110,7 @@ func create_control():
 
 	select_item_from_text(sound_option, get_sound_id())
 
-	return control
+	return hbox_container
 	
 
 var line_edit:LineEdit = LineEdit.new()

@@ -5,24 +5,32 @@
 
 [sub_resource type="Resource" id="Resource_8a8pi"]
 script = ExtResource("2_8a8pi")
-library_id = "UI"
-sound_id = "Click"
+library_name = "Roombaba3"
+library_id = "58b0eb02-e79e-4f6b-9918-ca5c2afa249e"
 
-[node name="Test" type="Control" unique_id=292418398 node_paths=PackedStringArray("button")]
+[node name="Test" type="Control" unique_id=292418398]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -5.0
+offset_right = -24.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_syuel")
 click_sound = SubResource("Resource_8a8pi")
-button = NodePath("Button")
 
-[node name="Button" type="Button" parent="." unique_id=1003153682]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=199323810]
+clip_children = 2
 layout_mode = 0
-offset_left = 349.0
+offset_left = 258.0
 offset_top = 99.0
-offset_right = 563.0
-offset_bottom = 288.0
-text = "BUtton"
+offset_right = 454.0
+offset_bottom = 139.0
+
+[node name="Button" type="OptionButton" parent="HBoxContainer" unique_id=4487510]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3

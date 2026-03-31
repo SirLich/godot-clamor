@@ -2,15 +2,23 @@
 
 [ext_resource type="Script" uid="uid://b0ys5pjmtjvhe" path="res://addons/clamor/sound_library.gd" id="1_f240l"]
 [ext_resource type="Script" uid="uid://culasgrmtad12" path="res://addons/clamor/sound.gd" id="2_doxvt"]
+[ext_resource type="AudioStream" uid="uid://bhbg3v8j4uyuo" path="res://test/assets/3.ogg" id="3_x416g"]
 
-[sub_resource type="Resource" id="Resource_0kc3d"]
+[sub_resource type="Resource" id="Resource_c0iyy"]
 script = ExtResource("2_doxvt")
+stream = ExtResource("3_x416g")
+metadata/_custom_type_script = "uid://culasgrmtad12"
+
+[sub_resource type="Resource" id="Resource_x416g"]
+script = ExtResource("2_doxvt")
+stream = ExtResource("3_x416g")
 metadata/_custom_type_script = "uid://culasgrmtad12"
 
 [resource]
 script = ExtResource("1_f240l")
 name = "UI"
-sounds = Dictionary[String, ExtResource("2_doxvt")]({
-"Click": SubResource("Resource_0kc3d")
+sound_dictionary = Dictionary[String, ExtResource("2_doxvt")]({
+"Baba": SubResource("Resource_c0iyy"),
+"Mama": SubResource("Resource_x416g")
 })
 metadata/_custom_type_script = "uid://b0ys5pjmtjvhe"
