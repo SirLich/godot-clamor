@@ -9,13 +9,15 @@ metadata/_custom_type_script = "uid://culasgrmtad12"
 
 [sub_resource type="Resource" id="Resource_fub6f"]
 script = ExtResource("2_i70g4")
+name = null
 metadata/_custom_type_script = "uid://culasgrmtad12"
 
 [resource]
 script = ExtResource("1_fub6f")
 name = "Roombaba3"
 sounds = Array[ExtResource("2_i70g4")]([SubResource("Resource_fub6f")])
-sound_dictionary = Dictionary[String, ExtResource("2_i70g4")]({
-"Enemy.Attack": SubResource("Resource_i70g4")
+sound_dict = Dictionary[String, ExtResource("2_i70g4")]({
+"Bab": SubResource("Resource_i70g4"),
+"Shamio": null
 })
 metadata/_custom_type_script = "uid://b0ys5pjmtjvhe"

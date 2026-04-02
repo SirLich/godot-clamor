@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_8a8pi"]
 script = ExtResource("2_8a8pi")
-library_name = "Roombaba3"
-library_id = "58b0eb02-e79e-4f6b-9918-ca5c2afa249e"
+library_name = "UI"
+library_id = "9ccf38ff-d99d-4ec4-ac9e-bf4eb331580b"
 
 [node name="Test" type="Control" unique_id=292418398]
 layout_mode = 3

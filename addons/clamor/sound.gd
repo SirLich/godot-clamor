@@ -2,6 +2,8 @@
 
 class_name Sound extends Resource
 
+@export var name : String
+
 ## The unique ID of the sound, generated on creation
 @export var id : String = ClamorID.v4()
 

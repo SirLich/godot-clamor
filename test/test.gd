@@ -1,6 +1,6 @@
 extends Control
 
-@export var click_sound : SoundReference = SoundReference.new()
+@export var click_sound : SoundReference
 @export var button: Button
 
 func _ready() -> void:
