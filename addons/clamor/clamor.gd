@@ -4,15 +4,21 @@ class_name Clamor
 
 static var _settings_path = "addons/clamor/settings-path"
 const sound_library_editor = preload("uid://bvldqlmbuy0pa")
+const SoundToolbarInspectorPlugin = preload("uid://ch6cgsswgflbf")
 
 var sound_reference_editor_inspector_plugin : EditorInspectorPlugin
 var sound_library_editor_inspector_plugin : EditorInspectorPlugin
+var sound_toolbar_inspector_plugin : EditorInspectorPlugin
 
 func _enter_tree() -> void:
 	sound_reference_editor_inspector_plugin = load("uid://3srcdqbyo7qi").new()
 	sound_library_editor_inspector_plugin = sound_library_editor.new()
+	sound_toolbar_inspector_plugin = SoundToolbarInspectorPlugin.new()
+	
 	add_inspector_plugin(sound_reference_editor_inspector_plugin)
 	add_inspector_plugin(sound_library_editor_inspector_plugin)
+	add_inspector_plugin(sound_toolbar_inspector_plugin)
+	
 	add_autoload_singleton("SoundManager", "sound_manager.gd")
 	Clamor.initialize_settings()
 
@@ -24,6 +30,10 @@ func _exit_tree() -> void:
 	if is_instance_valid(sound_library_editor_inspector_plugin):
 		remove_inspector_plugin(sound_library_editor_inspector_plugin)
 		sound_library_editor_inspector_plugin = null
+	
+	if is_instance_valid(sound_toolbar_inspector_plugin):
+		remove_inspector_plugin(sound_toolbar_inspector_plugin)
+		sound_toolbar_inspector_plugin = null
 		
 	remove_autoload_singleton("SoundManager")
 

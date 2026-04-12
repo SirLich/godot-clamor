@@ -13,6 +13,12 @@ class_name Sound extends Resource
 @export var pitch_offset_db : float
 @export_range(-5, 5) var pitch_offset_randomization : float
 
+
+@export_category("Preview")
+
+## Customized harness for sound toolbar editor
+@export var clamor_toolbar_section : int
+
 func _validate_property(property: Dictionary) -> void:
 	if property.name == "id":
 		property.usage = PROPERTY_USAGE_READ_ONLY | PROPERTY_USAGE_EDITOR

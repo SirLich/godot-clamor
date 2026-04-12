@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Sound" format=3 uid="uid://bixt8efrgvf42"]
+
+[ext_resource type="Script" uid="uid://culasgrmtad12" path="res://addons/clamor/sound.gd" id="1_ah5ls"]
+[ext_resource type="AudioStream" uid="uid://b64vt4ii2ffv8" path="res://test/assets/2.ogg" id="2_7qpgi"]
+
+[resource]
+script = ExtResource("1_ah5ls")
+stream = ExtResource("2_7qpgi")
+pitch_offset_db = 1.0
+pitch_offset_randomization = 1.0
+metadata/_custom_type_script = "uid://culasgrmtad12"
