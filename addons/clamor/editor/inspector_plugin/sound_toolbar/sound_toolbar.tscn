@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfg02p5mw772"]
 
-[ext_resource type="Script" uid="uid://cel2vax8tyw67" path="res://addons/clamor/inspector_plugin/sound_toolbar/sound_toolbar.gd" id="1_vd5b0"]
+[ext_resource type="Script" uid="uid://cel2vax8tyw67" path="res://addons/clamor/editor/inspector_plugin/sound_toolbar/sound_toolbar.gd" id="1_vd5b0"]
 
 [node name="SoundToolbar" type="PanelContainer" unique_id=1261683424 node_paths=PackedStringArray("stop_button", "play_from_start_button", "play_button", "time_label", "progress_slider")]
 anchors_preset = 8

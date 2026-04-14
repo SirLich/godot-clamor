@@ -9,7 +9,6 @@ metadata/_custom_type_script = "uid://culasgrmtad12"
 
 [sub_resource type="Resource" id="Resource_fub6f"]
 script = ExtResource("2_i70g4")
-name = null
 metadata/_custom_type_script = "uid://culasgrmtad12"
 
 [resource]

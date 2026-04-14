@@ -16,7 +16,6 @@ clamor/settings-path="uid://sqsk5jmwdhq4"
 
 config/name="Clamor"
 config/tags=PackedStringArray("addon")
-run/main_scene="uid://be2keryo2ejqd"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
