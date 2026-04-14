@@ -12,6 +12,7 @@ extends PanelContainer
 var sound : Sound
 var local_audio_player : AudioStreamPlayer
 var is_scrubbing = false
+var audio_clip_length : float
 
 func get_editor_icon(icon_name: String) -> Texture2D:
 	return EditorInterface.get_editor_theme().get_icon(icon_name, &"EditorIcons")
@@ -34,7 +35,10 @@ func _process(delta: float) -> void:
 		return 
 		
 	if local_audio_player:
-		var ratio = local_audio_player.get_playback_position() / local_audio_player.stream.get_length()
+		var playback_pos = local_audio_player.get_playback_position()
+		var ratio = playback_pos / audio_clip_length
+		time_label.text = "%.2f" % [playback_pos]
+		
 		progress_slider.value = ratio
 
 func drag_started():
@@ -65,6 +69,7 @@ func create_stream():
 	local_audio_player.volume_db = sound.volume_offset_db + randf_range(-sound.volume_offset_randomization, sound.volume_offset_randomization)
 	local_audio_player.pitch_scale = 1 + sound.pitch_offset_db + randf_range(-sound.pitch_offset_randomization, sound.pitch_offset_randomization)
 	local_audio_player.stream = sound.get_stream()
+	audio_clip_length = local_audio_player.stream.get_length()
 
 func play_editor_sound(progress):
 	create_stream()
