@@ -8,15 +8,6 @@ var _players_3d: Array[PooledAudioStreamPlayer3D] = []
 
 var num_pooled_sounds = 10
 	
-func play(sound : SoundReference) -> void:
-	var instance = _get_player_1d()
-	## TODO: Check whether the sound actually exists :)
-	var library = ClamorSettings.get_settings().get_library_by_id(sound.library_id).get_sound_by_name(sound.sound_name) as Sound
-	instance.configure([library.get_stream()], true, "", true, 1.0, 1.0, ProcessMode.PROCESS_MODE_ALWAYS)
-	
-	instance.trigger()
-	instance.release(true)
-	
 func _ready() -> void:
 	_initialize_pools()
 

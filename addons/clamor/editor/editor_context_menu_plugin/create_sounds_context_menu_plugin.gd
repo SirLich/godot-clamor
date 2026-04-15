@@ -2,7 +2,7 @@
 
 extends EditorContextMenuPlugin
 
-#const RANDOMIZED_SOUND_ICON = preload("uid://d3yc1eif75c88")
+const SOUND_CONTAINER_ICON = preload("uid://b0438x8ymurdn")
 const SOUND_ICON = preload("uid://ccsr3d0yurota")
 
 func create_sound(args : Array[String]):
@@ -21,10 +21,10 @@ func create_sound(args : Array[String]):
 		
 	ResourceSaver.save(sound, resource_path)
 
-func create_randomized_sound(args : Array[String]):
-	var randomizer = RandomizedSound.new()
+func create_sound_container(args : Array[String]):
+	var container = SoundContainer.new()
 	var streams = get_streams(args)
-	randomizer.streams.append_array(streams)
+	container.streams.append_array(streams)
 	
 	var base_path = args[0]
 	var root = base_path.get_base_dir()
@@ -32,10 +32,10 @@ func create_randomized_sound(args : Array[String]):
 	var resource_path = "%s/%sRandomizedSound.tres" % [root, resource_name]
 	
 	if FileAccess.file_exists(resource_path):
-		EditorInterface.get_editor_toaster().push_toast("Cannot create randomizer: File already exists.", EditorToaster.SEVERITY_WARNING)
+		EditorInterface.get_editor_toaster().push_toast("Cannot create sound container: File already exists.", EditorToaster.SEVERITY_WARNING)
 		return
 		
-	ResourceSaver.save(randomizer, resource_path)
+	ResourceSaver.save(container, resource_path)
 	
 func get_streams(paths: Array[String]) -> Array[AudioStream]:
 	var streams : Array[AudioStream]
@@ -65,4 +65,4 @@ func _popup_menu(paths: PackedStringArray) -> void:
 	if paths.size() == 1:
 		add_context_menu_item(&"Create Sound...", create_sound, SOUND_ICON)
 	else:
-		add_context_menu_item(&"Create Randomized Sound...", create_randomized_sound, SOUND_ICON)
+		add_context_menu_item(&"Create Sound Container...", create_sound_container, SOUND_CONTAINER_ICON)

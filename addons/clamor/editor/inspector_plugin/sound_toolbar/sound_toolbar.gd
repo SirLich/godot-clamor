@@ -59,7 +59,7 @@ func play_from_start():
 func play_from_progress():
 	create_stream()
 	var progress = progress_slider.value * local_audio_player.stream.get_length()
-	play_editor_sound(progress)
+	local_audio_player.play(progress)
 
 func create_stream():
 	if not local_audio_player:
