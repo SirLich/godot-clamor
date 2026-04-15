@@ -66,8 +66,8 @@ func create_stream():
 		local_audio_player = AudioStreamPlayer.new()
 		add_child(local_audio_player)
 	
-	local_audio_player.volume_db = sound.volume_offset_db + randf_range(-sound.volume_offset_randomization, sound.volume_offset_randomization)
-	local_audio_player.pitch_scale = 1 + sound.pitch_offset_db + randf_range(-sound.pitch_offset_randomization, sound.pitch_offset_randomization)
+	local_audio_player.volume_db = sound.volume_offset_db + randf_range(-sound.random_volume_offset_db, sound.random_volume_offset_db)
+	local_audio_player.pitch_scale = 1 + sound.random_pitch + randf_range(-sound.random_pitch_semitones, sound.random_pitch_semitones)
 	local_audio_player.stream = sound.get_stream()
 	audio_clip_length = local_audio_player.stream.get_length()
 

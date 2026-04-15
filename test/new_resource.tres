@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RandomizedSound" format=3 uid="uid://baj4npdotx2tw"]
+
+[ext_resource type="Script" uid="uid://b34yro7yi5h7i" path="res://addons/clamor/randomized_sound.gd" id="1_inhpa"]
+[ext_resource type="AudioStream" uid="uid://bhbg3v8j4uyuo" path="res://test/assets/3.ogg" id="2_f2blp"]
+
+[resource]
+script = ExtResource("1_inhpa")
+streams = Array[AudioStream]([ExtResource("2_f2blp")])
+random_pitch = 0.1999999999999993
+metadata/_custom_type_script = "uid://b34yro7yi5h7i"
