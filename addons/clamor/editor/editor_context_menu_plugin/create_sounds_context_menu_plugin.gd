@@ -2,6 +2,9 @@
 
 extends EditorContextMenuPlugin
 
+#const RANDOMIZED_SOUND_ICON = preload("uid://d3yc1eif75c88")
+const SOUND_ICON = preload("uid://ccsr3d0yurota")
+
 func create_sound(args : Array[String]):
 	var sound = Sound.new()
 	var stream = get_streams(args)[0] as AudioStream
@@ -60,6 +63,6 @@ func _popup_menu(paths: PackedStringArray) -> void:
 		return
 		
 	if paths.size() == 1:
-		add_context_menu_item(&"Create Sound...", create_sound)
+		add_context_menu_item(&"Create Sound...", create_sound, SOUND_ICON)
 	else:
-		add_context_menu_item(&"Create Randomized Sound...", create_randomized_sound)
+		add_context_menu_item(&"Create Randomized Sound...", create_randomized_sound, SOUND_ICON)

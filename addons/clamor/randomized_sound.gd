@@ -1,5 +1,5 @@
 @tool
-
+@icon("uid://c00mbu2bckpxo")
 class_name RandomizedSound extends Sound
 
 @export var streams : Array[AudioStream]

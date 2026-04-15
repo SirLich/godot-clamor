@@ -1,4 +1,5 @@
 @tool
+@icon("uid://ccsr3d0yurota")
 
 class_name Sound extends Resource
 
