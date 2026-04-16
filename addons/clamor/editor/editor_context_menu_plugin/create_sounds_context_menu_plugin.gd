@@ -29,7 +29,7 @@ func create_sound_container(args : Array[String]):
 	var base_path = args[0]
 	var root = base_path.get_base_dir()
 	var resource_name = base_path.get_file().get_basename().to_pascal_case()
-	var resource_path = "%s/%sRandomizedSound.tres" % [root, resource_name]
+	var resource_path = "%s/%sSound.tres" % [root, resource_name]
 	
 	if FileAccess.file_exists(resource_path):
 		EditorInterface.get_editor_toaster().push_toast("Cannot create sound container: File already exists.", EditorToaster.SEVERITY_WARNING)

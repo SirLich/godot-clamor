@@ -7,7 +7,7 @@ var _players_2d: Array[PooledAudioStreamPlayer2D] = []
 var _players_3d: Array[PooledAudioStreamPlayer3D] = []
 
 var num_pooled_sounds = 10
-	
+
 func _ready() -> void:
 	_initialize_pools()
 

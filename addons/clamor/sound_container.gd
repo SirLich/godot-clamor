@@ -34,7 +34,6 @@ func ensure_shuffled_indexes():
 		shuffled_indexes.shuffle()
 
 func get_stream() -> AudioStream:
-	print(index)
 	if container_type == SoundContainerType.Random:
 		return streams.pick_random()
 	elif container_type == SoundContainerType.RandomNoRepeats:
