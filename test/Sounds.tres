@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundContainer" format=3 uid="uid://chceo7byv2rb"]
+
+[ext_resource type="Script" uid="uid://b34yro7yi5h7i" path="res://addons/clamor/sound_container.gd" id="1_751vm"]
+[ext_resource type="AudioStream" uid="uid://bg51enpgbmdoo" path="res://test/assets/1.ogg" id="2_k712s"]
+[ext_resource type="AudioStream" uid="uid://b64vt4ii2ffv8" path="res://test/assets/2.ogg" id="3_4iy03"]
+[ext_resource type="AudioStream" uid="uid://bhbg3v8j4uyuo" path="res://test/assets/3.ogg" id="4_6qshc"]
+
+[resource]
+script = ExtResource("1_751vm")
+streams = Array[AudioStream]([ExtResource("2_k712s"), ExtResource("3_4iy03"), ExtResource("4_6qshc")])

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgf82gi4w03q3"]
 
 [ext_resource type="Script" uid="uid://cb1xm6tvesx3l" path="res://test/example.gd" id="1_q3ty6"]
-[ext_resource type="Resource" uid="uid://chceo7byv2rb" path="res://test/assets/Sounds.tres" id="2_6xdhu"]
+[ext_resource type="Resource" uid="uid://chceo7byv2rb" path="res://test/Sounds.tres" id="2_6xdhu"]
 
 [node name="Example" type="Control" unique_id=761089020 node_paths=PackedStringArray("button")]
 layout_mode = 3
