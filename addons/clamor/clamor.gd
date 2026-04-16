@@ -16,7 +16,6 @@ func _enter_tree() -> void:
 	add_inspector_plugin(sound_toolbar_inspector_plugin)
 	add_context_menu_plugin(EditorContextMenuPlugin.CONTEXT_SLOT_FILESYSTEM, create_sounds_context_menu_plugin)
 	
-	add_autoload_singleton("SoundManager", "sound_manager.gd")
 	Clamor.initialize_settings()
 
 func _exit_tree() -> void:
@@ -28,8 +27,6 @@ func _exit_tree() -> void:
 		remove_context_menu_plugin(create_sounds_context_menu_plugin)
 		create_sounds_context_menu_plugin = null
 		
-	remove_autoload_singleton("SoundManager")
-
 static func initialize_settings():
 	print("Initializing Clamor!")
 	print(Clamor._settings_path)
